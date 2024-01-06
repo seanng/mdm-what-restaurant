@@ -1,11 +1,9 @@
 import { getHumanReadableDistance } from 'utils/helpers'
 
-export const loadingTexts = [
-  'Finding nearby restaurants...',
-]
+export const loadingTexts = ['Finding nearby restaurants...']
 
 export const headings = [
-  'Check out'
+  'Check out',
   'Eat some of this',
   'Sup. Have you tried',
   'How about',
@@ -23,8 +21,9 @@ export const skipTexts = [
 
 const translations = {
   enableLocationHeading: "We're unable to detect your current location",
-  enableLocationDescription: 'Enable your current location and refresh the page to see nearby restaurants.',
-  enableLocationPrompt:'Refresh this page after you',
+  enableLocationDescription:
+    'Enable your current location and refresh the page to see nearby restaurants.',
+  enableLocationPrompt: 'Refresh this page after you',
   expandMyRadius: 'Expand my search radius',
   howFar: 'Adjust search radius:',
   noPlacesNearbyHeading: 'It seems like there are no restaurants nearby',
@@ -35,7 +34,8 @@ const translations = {
   priceLevel4: '$$$$',
   priceLevel5: '$$$$$',
   refreshThisPage: 'REFRESH THIS PAGE 👈',
-  withinRadius: (radius) => `within ${getHumanReadableDistance(radius)} of my location`,
+  withinRadius: (radius) =>
+    `within ${getHumanReadableDistance(radius)} of my location`,
 }
 
 export default {
