@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { skipTexts } from 'data/translations'
 import { getRandom } from 'utils/helpers'
 
-export default function useRandomTexts(language) {
-  const [skipText, setSkipText] = useState(skipTexts[0][language])
+export default function useRandomTexts() {
+  const [skipText, setSkipText] = useState(skipTexts[0])
 
   const setRandomPrompts = () => {
-    setSkipText(getRandom(skipTexts)[language])
+    setSkipText(getRandom(skipTexts))
   }
 
   return {

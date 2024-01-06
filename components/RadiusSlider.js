@@ -3,13 +3,13 @@ import { INITIAL_RADIUS } from 'utils/configs'
 import t from 'data/translations'
 import Card from './Card'
 
-export default function RadiusSlider({ radiusSliderOptions, language }) {
+export default function RadiusSlider({ radiusSliderOptions }) {
   const { onChange, onFinalChange, radius } = radiusSliderOptions
 
   return (
     <div className="mt-5">
       <Card>
-        <p className="mb-4 text-sm">{t.howFar[language]}</p>
+        <p className="mb-4 text-sm">{t.howFar}</p>
         <div className="flex flex-row items-center">
           <div className="relative w-full">
             <Nouislider

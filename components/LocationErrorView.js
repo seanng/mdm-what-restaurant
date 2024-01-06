@@ -5,7 +5,7 @@ import Container from './Container'
 import H2 from './H2'
 import Button from './Button'
 
-export default function LocationErrorView({ language }) {
+export default function LocationErrorView() {
   const handleRefreshClick = () => {
     document.location.reload()
   }
@@ -13,8 +13,8 @@ export default function LocationErrorView({ language }) {
   return (
     <Container>
       <Card>
-        <H2>{t.enableLocationHeading[language]}</H2>
-        <div>{t.enableLocationDescription[language]}</div>
+        <H2>{t.enableLocationHeading}</H2>
+        <div>{t.enableLocationDescription}</div>
         <div className="flex justify-center mt-10 mb-7">
           <Image
             src="/happy-cry.png"
@@ -26,7 +26,7 @@ export default function LocationErrorView({ language }) {
       </Card>
       <div className="flex justify-center mt-8">
         <Button onClick={handleRefreshClick}>
-          {t.refreshThisPage[language]}
+          {t.refreshThisPage}
         </Button>
       </div>
     </Container>

@@ -9,7 +9,6 @@ import Button from './Button'
 function MainView({
   skipText,
   place,
-  language,
   onSkipClick,
   radiusSliderOptions,
   shouldShowSkip,
@@ -57,16 +56,13 @@ function MainView({
                 💰
               </span>
               <span className="mt-1 mr-5">
-                {t[`priceLevel${place.price_level}`][language]}
+                {t[`priceLevel${place.price_level}`]}
               </span>
             </div>
           )}
         </div>
       </Card>
-      <RadiusSlider
-        radiusSliderOptions={radiusSliderOptions}
-        language={language}
-      />
+      <RadiusSlider radiusSliderOptions={radiusSliderOptions} />
       {shouldShowSkip && (
         <div className="flex justify-center mt-8">
           <Button onClick={onSkipClick}>{skipText}</Button>

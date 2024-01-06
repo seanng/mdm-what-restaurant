@@ -5,12 +5,12 @@ import Container from './Container'
 import Card from './Card'
 import H2 from './H2'
 
-export default function NoPlacesView({ language, radiusSliderOptions }) {
+export default function NoPlacesView({ radiusSliderOptions }) {
   return (
     <Container>
       <Card>
-        <H2>{t.noPlacesNearbyHeading[language]}</H2>
-        <div>{t.noPlacesNearbyDescription[language]}</div>
+        <H2>{t.noPlacesNearbyHeading}</H2>
+        <div>{t.noPlacesNearbyDescription}</div>
         <div className="flex justify-center mt-10 mb-7">
           <Image
             src="/thinking.png"
@@ -20,10 +20,7 @@ export default function NoPlacesView({ language, radiusSliderOptions }) {
           />
         </div>
       </Card>
-      <RadiusSlider
-        language={language}
-        radiusSliderOptions={radiusSliderOptions}
-      />
+      <RadiusSlider radiusSliderOptions={radiusSliderOptions} />
     </Container>
   )
 }

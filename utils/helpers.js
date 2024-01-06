@@ -52,14 +52,3 @@ export function getDistanceFromLatLon(lat1, lon1, lat2, lon2) {
 function deg2rad(deg) {
   return deg * (Math.PI / 180)
 }
-
-export function getLanguageFromBrowser() {
-  const browserLanguage = navigator.language
-  const supportedNonEnLanguages = ['zh-HK']
-
-  if (supportedNonEnLanguages.findIndex((v) => v === browserLanguage) > -1) {
-    return browserLanguage
-  }
-
-  return 'en'
-}

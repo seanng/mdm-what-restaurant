@@ -14,16 +14,18 @@ import {
   LOADING,
   POSITION_PERMISSION_DENIED,
 } from 'utils/constants'
-import { getDistanceFromLatLon, getLanguageFromBrowser } from 'utils/helpers'
+import { getDistanceFromLatLon } from 'utils/helpers'
 import { INITIAL_RADIUS } from 'utils/configs'
 
+/**
+ * This is the main page of the app.
+ */
 function IndexPage() {
-  const [language, setLanguage] = useState('en')
   const [history, setHistory] = useState([])
   const [radius, setRadius] = useState(INITIAL_RADIUS)
   const router = useRouter()
 
-  const { setRandomPrompts, skipText, setSkipText } = useRandomTexts(language)
+  const { setRandomPrompts, skipText, setSkipText } = useRandomTexts()
 
   const {
     fetchPlaces,
@@ -54,7 +56,6 @@ function IndexPage() {
 
   // initial load.
   useEffect(() => {
-    setLanguage(getLanguageFromBrowser())
     setRandomPrompts()
     fetchPlaces()
     // clear url in case someone shares a link with idx=<number>
@@ -87,11 +88,11 @@ function IndexPage() {
   }
 
   if (mode === LOADING) {
-    return <LoadingView language={language} />
+    return <LoadingView />
   }
 
   if (mode === POSITION_PERMISSION_DENIED) {
-    return <LocationErrorView language={language} />
+    return <LocationErrorView />
   }
 
   const radiusSliderOptions = {
@@ -103,12 +104,7 @@ function IndexPage() {
   if (!place) {
     return (
       <>
-        <NoPlacesView
-          {...{
-            language,
-            radiusSliderOptions,
-          }}
-        />
+        <NoPlacesView radiusSliderOptions={radiusSliderOptions} />
         <SpinnerModal shouldOpen={mode === REFETCHING} />
       </>
     )
@@ -127,7 +123,6 @@ function IndexPage() {
         {...{
           skipText,
           place,
-          language,
           onSkipClick: handleSkipClick,
           radiusSliderOptions,
           distance,
