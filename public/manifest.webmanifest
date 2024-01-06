@@ -1,0 +1,15 @@
+{
+  "background_color": "black",
+  "description": "Can't decide what to eat? Let us generate a random restaurant near you.",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://what.restaurant/eat-icon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    }
+  ],
+  "name": "what.restaurant",
+  "short_name": "what.rest",
+  "start_url": "/"
+}

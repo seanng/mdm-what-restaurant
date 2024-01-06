@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #FCD228;
+  background-image: url('../public/vector-overlay.png');
+  padding-top: 2rem;
+}
+
+/* customize slider */
+.noUi-horizontal {
+  background: #A0A0A0;
+  height: 0.5rem;
+  box-shadow: none;
+  border: none;
+}
+
+.noUi-connects {
+  height: 40px;
+  top: -15px;
+}
+
+/* slider handle */
+.noUi-horizontal .noUi-handle{
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #FCD228;
+  border: 0px;
+  box-shadow: none;
+}
+
+.noUi-handle:before, .noUi-handle:after {
+  display: none;
+}
+
+.noUi-touch-area {
+  height: 200%;
+  width: 200%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+}
