@@ -21,12 +21,13 @@ import { INITIAL_RADIUS } from 'utils/configs'
  * This is the main page of the app.
  */
 function IndexPage() {
+  // Keep track of the restaurant view history in case the user navigates back to see the last place.
   const [history, setHistory] = useState([])
   const [radius, setRadius] = useState(INITIAL_RADIUS)
   const router = useRouter()
-
   const { setRandomPrompts, skipText, setSkipText } = useRandomTexts()
 
+  // The bulk of API related logic is in this useApi hook.
   const {
     fetchPlaces,
     place,
@@ -37,6 +38,7 @@ function IndexPage() {
     setPlace,
   } = useApi()
 
+  // When the user navigates back to a previous place, we need to update the state.
   useEffect(() => {
     const idx = Number(router.query.idx || 0)
     if (history[idx]) {
@@ -58,7 +60,6 @@ function IndexPage() {
   useEffect(() => {
     setRandomPrompts()
     fetchPlaces()
-    // clear url in case someone shares a link with idx=<number>
     router.replace('/', '/', { shallow: true })
   }, [])
 
@@ -87,18 +88,18 @@ function IndexPage() {
     setRandomPrompts()
   }
 
+  const radiusSliderOptions = {
+    onChange: handleRadiusChange,
+    onFinalChange: handleFinalRadiusChange,
+    radius,
+  }
+
   if (mode === LOADING) {
     return <LoadingView />
   }
 
   if (mode === POSITION_PERMISSION_DENIED) {
     return <LocationErrorView />
-  }
-
-  const radiusSliderOptions = {
-    onChange: handleRadiusChange,
-    onFinalChange: handleFinalRadiusChange,
-    radius,
   }
 
   if (!place) {
@@ -110,13 +111,6 @@ function IndexPage() {
     )
   }
 
-  const distance = getDistanceFromLatLon(
-    currentLatLng[0],
-    currentLatLng[1],
-    place.geometry.location.lat,
-    place.geometry.location.lng
-  )
-
   return (
     <>
       <MainView
@@ -125,7 +119,12 @@ function IndexPage() {
           place,
           onSkipClick: handleSkipClick,
           radiusSliderOptions,
-          distance,
+          distance: getDistanceFromLatLon(
+            currentLatLng[0],
+            currentLatLng[1],
+            place.geometry.location.lat,
+            place.geometry.location.lng
+          ),
           shouldShowSkip: allPlaces.length > 1,
         }}
       />

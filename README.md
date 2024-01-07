@@ -1,6 +1,10 @@
 # What Restaurant? (MDM Work Sample)
 
-I built this small progressive web app (PWA) a couple of years ago to help my colleagues and I decide where to eat in the area. A PWA is a web app that can be saved on the Home Screen of a Smart Phone, resembling a Mobile App. I have a deployed version up on https://what.restaurant. 
+I built this small progressive web app (PWA) a few years ago to help my colleagues and I decide where to eat in the area. A PWA is a web app that can be saved on the Home Screen of a Smart Phone, resembling a Mobile App. I have a deployed version up on https://what.restaurant. Please allow your location to be shared when you are viewing the app.
+
+## Orienting the code
+
+This ReactJS app is built on [Next.js](https://nextjs.org/docs) and follows its [Pages Router folder structure](https://nextjs.org/docs/getting-started/project-structure). I have started documenting the code from the `pages/index.js` file.
 
 ## Running locally
 
@@ -15,7 +19,3 @@ I built this small progressive web app (PWA) a couple of years ago to help my co
 
 - `yarn dev` to start the frontend development server.
 - View the frontend on localhost:3300.
-
-## What's inside?
-
-This is a simple one-page ReactJS application built on [Next.js](https://nextjs.org/docs). Start orienting from `pages/index.js`.

@@ -12,14 +12,11 @@ import {
   SUCCESS,
   NO_GEOLOCATION,
 } from 'utils/constants'
-// import dummyResults from 'data/dummy-results'
 import { getPlaceWithPhotoUrl, getRandom, sleep } from 'utils/helpers'
 import { INITIAL_RADIUS } from 'utils/configs'
 
 export default function useApi() {
   const [mode, setMode] = useState(LOADING)
-  // const [place, setPlace] = useState(dummyResults[0])
-  // const [allPlaces, setAllPlaces] = useState(dummyResults)
   const [currentLatLng, setCurrentLatLng] = useState([0, 0])
   const [place, setPlace] = useState(null)
   const [allPlaces, setAllPlaces] = useState([])
