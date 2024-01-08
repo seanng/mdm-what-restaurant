@@ -1,6 +1,6 @@
 # What Restaurant? (MDM Work Sample)
 
-I built this small progressive web app (PWA) a few years ago to help my colleagues and I decide where to eat in the area. A PWA is a web app that can be saved on the Home Screen of a Smart Phone, resembling a Mobile App. I have a deployed version up on https://what.restaurant. Please allow your location to be shared when you are viewing the app.
+I built this small progressive web app (PWA) a few years ago to help my colleagues and I decide where to eat in the area. A PWA is a web app that can be saved on the Home Screen of a Smart Phone, resembling a Mobile App. I have a deployed version up on https://what-restaurant.vercel.app/. Please allow your location to be shared when you are viewing the app.
 
 ## Orienting the code
 
